@@ -1,0 +1,20 @@
+n = int(input("Entre com um número inteiro: "))
+tam = len(str(n))
+lt = list()
+ol = list()
+sum = 0 
+for i in range(len(str(n)),0,-1):
+  n = int(n)
+  num = int(n/(10**(i-1)))
+  r = n%(10**(i-1))
+  n = r
+  lt.append(num)
+print(lt)
+for i in range(0,len(lt)):
+  aux = max(lt)
+  ol.append(aux)
+  for j in range(0,len(lt)):
+    if lt[j] == aux:
+      lt.pop(j)
+      break
+print(ol)
