@@ -1,0 +1,15 @@
+def digital_roots(n):
+  sum = 0
+  for i in range(len(str(n)),0,-1):
+    n = int(n)
+    num = int(n/(10**(i-1)))
+    r = n%(10**(i-1))
+    n = r
+    sum = sum + num
+  if sum > 10:
+    return digital_roots(sum)
+  else:
+    return sum
+
+n = int(input("Entre com um número inteiro: "))
+print(digital_roots(n)) 
